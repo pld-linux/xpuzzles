@@ -20,6 +20,7 @@ Source10:	xrubik.desktop
 Source11:	xskewb.desktop
 Source12:	xthreed.desktop
 Source13:	xtriangles.desktop
+Patch0:		%{name}-man.patch
 URL:		http://www.tux.org/~bagleyd/puzzles.html
 BuildRequires:	XFree86-devel
 BuildRequires:	motif-devel
@@ -36,6 +37,7 @@ wersjê kostki Rubika i ró¿ne inne uk³adanki w tym stylu.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__make} -f xpuzzles.Makefile xmkmf
