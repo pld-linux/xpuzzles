@@ -7,7 +7,7 @@ Group:		Amusements/Games
 Source:		ftp://sunsite.unc.edu/pub/Linux/games/strategy/%{name}-%{version}.tgz
 Patch:		xpuzzles-5.4.1-install.patch
 Patch1:		xpuzzles-5.4.1-nobr.patch
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		/usr/X11R6/man
