@@ -1,6 +1,8 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=xskewb
+Comment=Puzzle with faces cut by a diamond
+Comment[pl]=Układanka o powierzchni pociętej diamentem
 Type=Application
 Exec=xskewb
 Categories=Game;LogicGame;
