@@ -6,6 +6,7 @@ Release:	1
 License:	MIT
 Group:		Applications/Games
 Source0:	ftp://sunsite.unc.edu/pub/Linux/games/strategy/%{name}-%{version}.tar.gz
+# Source0-md5:	3f05e9692e15114bf0a3805d20b9ad09
 Patch0:		%{name}-link.patch
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
