@@ -1,13 +1,16 @@
-Summary: Geometric puzzles and toys for the X Window System.
-Name: xpuzzles
-Version: 5.4.1
-Release: 7
-Copyright: MIT
-Group: Amusements/Games
-Source: ftp://sunsite.unc.edu/pub/Linux/games/strategy/xpuzzles-5.4.1.tgz
-Patch: xpuzzles-5.4.1-install.patch
-Patch1: xpuzzles-5.4.1-nobr.patch
-BuildRoot: /var/tmp/xpuzzles-root
+Summary:	Geometric puzzles and toys for the X Window System.
+Name:		xpuzzles
+Version:	5.4.1
+Release:	7
+Copyright:	MIT
+Group:		Amusements/Games
+Source:		ftp://sunsite.unc.edu/pub/Linux/games/strategy/%{name}-%{version}.tgz
+Patch:		xpuzzles-5.4.1-install.patch
+Patch1:		xpuzzles-5.4.1-nobr.patch
+BuildRoot:	/tmp/%{name}-%{version}-root
+
+%define		_prefix		/usr/X11R6
+%define		_mandir		/usr/X11R6/man
 
 %description
 A set of geometric puzzles and toys for the X Window System.  Xpuzzles
@@ -17,20 +20,23 @@ cube style puzzles.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1 -b .nobr
+%patch1 -p1
 
 %build
 make -f xpuzzles.Makefile xmkmf
-make -f xpuzzles.Makefile
+make -f xpuzzles.Makefile CXXDEBUGFLAGS="$RPM_OPT_FLAGS" \
+	CDEBUGFLAGS="$RPM_OPT_FLAGS"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT/etc/X11/wmconfig
-mkdir -p $RPM_BUILD_ROOT/usr/X11R6/{bin,man/man1}
+install -d $RPM_BUILD_ROOT/etc/X11/wmconfig
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
-make -f xpuzzles.Makefile DESTDIR=$RPM_BUILD_ROOT install
+make -f xpuzzles.Makefile install DESTDIR=$RPM_BUILD_ROOT
 
-strip $RPM_BUILD_ROOT/usr/X11R6/bin/* 
+strip --strip-unneeded $RPM_BUILD_ROOT%{_bindir}/* 
+
+gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/*
 
 cat > $RPM_BUILD_ROOT/etc/X11/wmconfig/xcubes <<EOF
 xcubes name "xcubes"
@@ -113,7 +119,7 @@ EOF
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(-,root,root)
+%defattr(644,root,root,755)
 %config /etc/X11/wmconfig/xcubes
 %config /etc/X11/wmconfig/xdino
 %config /etc/X11/wmconfig/xhexagons
@@ -125,26 +131,25 @@ rm -rf $RPM_BUILD_ROOT
 %config /etc/X11/wmconfig/xrubik
 %config /etc/X11/wmconfig/xskewb
 %config /etc/X11/wmconfig/xtriangles
-
-/usr/X11R6/bin/xpanex
-/usr/X11R6/man/man1/xpanex.1
-/usr/X11R6/bin/xrubik
-/usr/X11R6/man/man1/xrubik.1
-/usr/X11R6/bin/xskewb
-/usr/X11R6/man/man1/xskewb.1
-/usr/X11R6/bin/xdino
-/usr/X11R6/man/man1/xdino.1
-/usr/X11R6/bin/xpyraminx
-/usr/X11R6/man/man1/xpyraminx.1
-/usr/X11R6/bin/xoct
-/usr/X11R6/man/man1/xoct.1
-/usr/X11R6/bin/xmball
-/usr/X11R6/man/man1/xmball.1
-/usr/X11R6/bin/xcubes
-/usr/X11R6/man/man1/xcubes.1
-/usr/X11R6/bin/xtriangles
-/usr/X11R6/man/man1/xtriangles.1
-/usr/X11R6/bin/xhexagons
-/usr/X11R6/man/man1/xhexagons.1
-/usr/X11R6/bin/xmlink
-/usr/X11R6/man/man1/xmlink.1
+%attr(755,root,root) %{_bindir}/xpanex
+%attr(755,root,root) %{_bindir}/xrubik
+%attr(755,root,root) %{_bindir}/xskewb
+%attr(755,root,root) %{_bindir}/xdino
+%attr(755,root,root) %{_bindir}/xpyraminx
+%attr(755,root,root) %{_bindir}/xoct
+%attr(755,root,root) %{_bindir}/xmball
+%attr(755,root,root) %{_bindir}/xcubes
+%attr(755,root,root) %{_bindir}/xtriangles
+%attr(755,root,root) %{_bindir}/xhexagons
+%attr(755,root,root) %{_bindir}/xmlink
+%{_mandir}/man1/xpanex.1.gz
+%{_mandir}/man1/xrubik.1.gz
+%{_mandir}/man1/xskewb.1.gz
+%{_mandir}/man1/xdino.1.gz
+%{_mandir}/man1/xpyraminx.1.gz
+%{_mandir}/man1/xoct.1.gz
+%{_mandir}/man1/xmball.1.gz
+%{_mandir}/man1/xcubes.1.gz
+%{_mandir}/man1/xtriangles.1.gz
+%{_mandir}/man1/xhexagons.1.gz
+%{_mandir}/man1/xmlink.1.gz
