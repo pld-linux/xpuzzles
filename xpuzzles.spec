@@ -1,15 +1,16 @@
 Summary:	Geometric puzzles and toys for the X Window System
 Summary(pl):	Geometryczne uk³adanki i zabawki pod X Window System
 Name:		xpuzzles
-Version:	5.4.1
-Release:	7
+Version:	5.5.2
+Release:	5
 License:	MIT
 Group:		Applications/Games
 Group(de):	Applikationen/Spiele
 Group(pl):	Aplikacje/Gry
-Source:		ftp://sunsite.unc.edu/pub/Linux/games/strategy/%{name}-%{version}.tgz
+Source:		ftp://sunsite.unc.edu/pub/Linux/games/strategy/%{name}-%{version}.tar.gz
 Patch0:		%{name}-5.4.1-install.patch
 Patch1:		%{name}-5.4.1-nobr.patch
+BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -19,6 +20,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 A set of geometric puzzles and toys for the X Window System.  Xpuzzles
 includes a version of Rubik's cube and various other geometric Rubik's
 cube style puzzles.
+
+%description -l pl
+Zestaw geometrycznych uk³adanek i zabawek pod X Window System. Zawiera
+wersjê kostki Rubika i ró¿ne inne uk³adanki w tym stylu.
 
 %prep
 %setup -q
@@ -32,86 +37,87 @@ cube style puzzles.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/etc/X11/wmconfig
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1,%{_applnkdir}/Games}
 
 %{__make} -f xpuzzles.Makefile install DESTDIR=$RPM_BUILD_ROOT
 
-cat > $RPM_BUILD_ROOT/etc/X11/wmconfig/xcubes <<EOF
-xcubes name "xcubes"
-xcubes description "xcubes"
-xcubes group Games/Strategy
-xcubes exec "xcubes &"
+gzip -9nf xpuzzles.README
+
+cat > $RPM_BUILD_ROOT%{_applnkdir}/Games/xcubes.desktop <<EOF
+[Desktop Entry]
+Name=xcubes
+Type=Application
+Exec=xcubes
 EOF
 
-cat > $RPM_BUILD_ROOT/etc/X11/wmconfig/xdino <<EOF
-xdino name "xdino"
-xdino description "xdino"
-xdino group Games/Strategy
-xdino exec "xdino &"
+cat > $RPM_BUILD_ROOT%{_applnkdir}/Games/xdino.desktop <<EOF
+[Desktop Entry]
+Name=xdino
+Type=Application
+Exec=xdino
 EOF
 
-cat > $RPM_BUILD_ROOT/etc/X11/wmconfig/xhexagons <<EOF
-xhexagons name "xhexagons"
-xhexagons description "xhexagons"
-xhexagons group Games/Strategy
-xhexagons exec "xhexagons &"
+cat > $RPM_BUILD_ROOT%{_applnkdir}/Games/xhexagons.desktop <<EOF
+[Desktop Entry]
+Name=xhexagons
+Type=Application
+Exec=xhexagons
 EOF
 
-cat > $RPM_BUILD_ROOT/etc/X11/wmconfig/xmball <<EOF
-xmball name "xmball"
-xmball description "xmball"
-xmball group Games/Strategy
-xmball exec "xmball &"
+cat > $RPM_BUILD_ROOT%{_applnkdir}/Games/xmball.desktop <<EOF
+[Desktop Entry]
+Name=xmball
+Type=Application
+Exec=xmball
 EOF
 
-cat > $RPM_BUILD_ROOT/etc/X11/wmconfig/xmlink <<EOF
-xmlink name "xmlink"
-xmlink description "xmlink"
-xmlink group Games/Strategy
-xmlink exec "xmlink &"
+cat > $RPM_BUILD_ROOT%{_applnkdir}/Games/xmlink.desktop <<EOF
+[Desktop Entry]
+Name=xmlink
+Type=Application
+Exec=xmlink
 EOF
 
-cat > $RPM_BUILD_ROOT/etc/X11/wmconfig/xoct <<EOF
-xoct name "xoct"
-xoct description "xoct"
-xoct group Games/Strategy
-xoct exec "xoct &"
+cat > $RPM_BUILD_ROOT%{_applnkdir}/Games/xoct.desktop <<EOF
+[Desktop Entry]
+Name=xoct
+Type=Application
+Exec=xoct
 EOF
 
-cat > $RPM_BUILD_ROOT/etc/X11/wmconfig/xpanex <<EOF
-xpanex name "xpanex"
-xpanex description "xpanex"
-xpanex group Games/Strategy
-xpanex exec "xpanex &"
+cat > $RPM_BUILD_ROOT%{_applnkdir}/Games/xpanex.desktop <<EOF
+[Desktop Entry]
+Name=xpanex
+Type=Application
+Exec=xpanex
 EOF
 
-cat > $RPM_BUILD_ROOT/etc/X11/wmconfig/xpyraminx <<EOF
-xpyraminx name "xpyraminx"
-xpyraminx description "xpyraminx"
-xpyraminx group Games/Strategy
-xpyraminx exec "xpyraminx &"
+cat > $RPM_BUILD_ROOT%{_applnkdir}/Games/xpyraminx.desktop <<EOF
+[Desktop Entry]
+Name=xpyraminx
+Type=Application
+Exec=xpyraminx
 EOF
 
-cat > $RPM_BUILD_ROOT/etc/X11/wmconfig/xrubik <<EOF
-xrubik name "xrubik"
-xrubik description "xrubik"
-xrubik group Games/Strategy
-xrubik exec "xrubik &"
+cat > $RPM_BUILD_ROOT%{_applnkdir}/Games/xrubik.desktop <<EOF
+[Desktop Entry]
+Name=xskewb
+Type=Application
+Exec=xskewb
 EOF
 
-cat > $RPM_BUILD_ROOT/etc/X11/wmconfig/xskewb <<EOF
-xskewb name "xskewb"
-xskewb description "xskewb"
-xskewb group Games/Strategy
-xskewb exec "xskewb &"
+cat > $RPM_BUILD_ROOT%{_applnkdir}/Games/xskewb.desktop <<EOF
+[Desktop Entry]
+Name=xskewb
+Type=Application
+Exec=xskewb
 EOF
 
-cat > $RPM_BUILD_ROOT/etc/X11/wmconfig/xtriangles <<EOF
-xtriangles name "xtriangles"
-xtriangles description "xtriangles"
-xtriangles group Games/Strategy
-xtriangles exec "xtriangles &"
+cat > $RPM_BUILD_ROOT%{_applnkdir}/Games/xtriangles.desktop <<EOF
+[Desktop Entry]
+Name=xtriangles
+Type=Application
+Exec=xtriangles
 EOF
 
 %clean
@@ -119,17 +125,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%config /etc/X11/wmconfig/xcubes
-%config /etc/X11/wmconfig/xdino
-%config /etc/X11/wmconfig/xhexagons
-%config /etc/X11/wmconfig/xmball
-%config /etc/X11/wmconfig/xmlink
-%config /etc/X11/wmconfig/xoct
-%config /etc/X11/wmconfig/xpanex
-%config /etc/X11/wmconfig/xpyraminx
-%config /etc/X11/wmconfig/xrubik
-%config /etc/X11/wmconfig/xskewb
-%config /etc/X11/wmconfig/xtriangles
+%doc *.gz
+%{_applnkdir}/Games/*.desktop
 %attr(755,root,root) %{_bindir}/xpanex
 %attr(755,root,root) %{_bindir}/xrubik
 %attr(755,root,root) %{_bindir}/xskewb
