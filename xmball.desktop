@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=xmball
+Type=Application
+Exec=xmball
+Categories=Game;
+Terminal=false
+# vi: encoding=utf-8

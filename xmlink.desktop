@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=xmlink
+Type=Application
+Exec=xmlink
+Categories=Game;
+Terminal=false
+# vi: encoding=utf-8

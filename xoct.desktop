@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=xoct
+Type=Application
+Exec=xoct
+Categories=Game;
+Terminal=false
+# vi: encoding=utf-8

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=xskewb
+Type=Application
+Exec=xskewb
+Categories=Game;
+Terminal=false
+# vi: encoding=utf-8
