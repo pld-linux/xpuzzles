@@ -80,11 +80,13 @@ install %{SOURCE1} %{SOURCE2} %{SOURCE3} %{SOURCE4} %{SOURCE5} %{SOURCE6} \
 	%{SOURCE7} %{SOURCE8} %{SOURCE9} %{SOURCE10} %{SOURCE11} %{SOURCE12} \
 	%{SOURCE13} $RPM_BUILD_ROOT%{_desktopdir}
 
-%post
-touch /var/games/xpuzzles/{barrel,cubes,dino,hexagons,mball,mlink,oct,panex,pyramix,rubik,skewb,threed,triangles}.scores
-
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post
+umask 002
+touch /var/games/xpuzzles/{barrel,cubes,dino,hexagons,mball,mlink,oct,panex,pyramix,rubik,skewb,threed,triangles}.scores
+chgrp games /var/games/xpuzzles/{barrel,cubes,dino,hexagons,mball,mlink,oct,panex,pyramix,rubik,skewb,threed,triangles}.scores
 
 %files
 %defattr(644,root,root,755)
@@ -105,19 +107,19 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/misc/xthreed.dat
 %{_desktopdir}/*.desktop
 %dir /var/games/xpuzzles
-%ghost /var/games/xpuzzles/barrel.scores
-%ghost /var/games/xpuzzles/cubes.scores
-%ghost /var/games/xpuzzles/dino.scores
-%ghost /var/games/xpuzzles/hexagons.scores
-%ghost /var/games/xpuzzles/mball.scores
-%ghost /var/games/xpuzzles/mlink.scores
-%ghost /var/games/xpuzzles/oct.scores
-%ghost /var/games/xpuzzles/panex.scores
-%ghost /var/games/xpuzzles/pyramix.scores
-%ghost /var/games/xpuzzles/rubik.scores
-%ghost /var/games/xpuzzles/skewb.scores
-%ghost /var/games/xpuzzles/threed.scores
-%ghost /var/games/xpuzzles/triangles.scores
+%attr(664,root,games) %ghost /var/games/xpuzzles/barrel.scores
+%attr(664,root,games) %ghost /var/games/xpuzzles/cubes.scores
+%attr(664,root,games) %ghost /var/games/xpuzzles/dino.scores
+%attr(664,root,games) %ghost /var/games/xpuzzles/hexagons.scores
+%attr(664,root,games) %ghost /var/games/xpuzzles/mball.scores
+%attr(664,root,games) %ghost /var/games/xpuzzles/mlink.scores
+%attr(664,root,games) %ghost /var/games/xpuzzles/oct.scores
+%attr(664,root,games) %ghost /var/games/xpuzzles/panex.scores
+%attr(664,root,games) %ghost /var/games/xpuzzles/pyramix.scores
+%attr(664,root,games) %ghost /var/games/xpuzzles/rubik.scores
+%attr(664,root,games) %ghost /var/games/xpuzzles/skewb.scores
+%attr(664,root,games) %ghost /var/games/xpuzzles/threed.scores
+%attr(664,root,games) %ghost /var/games/xpuzzles/triangles.scores
 %{_mandir}/man1/xbarrel.1*
 %{_mandir}/man1/xcubes.1*
 %{_mandir}/man1/xdino.1*
