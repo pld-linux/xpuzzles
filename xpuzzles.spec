@@ -11,8 +11,6 @@ Patch1:		%{name}-5.4.1-nobr.patch
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		/usr/X11R6/man
 
 %description
 A set of geometric puzzles and toys for the X Window System. Xpuzzles
