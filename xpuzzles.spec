@@ -23,8 +23,8 @@ cube style puzzles.
 %patch1 -p1
 
 %build
-make -f xpuzzles.Makefile xmkmf
-make -f xpuzzles.Makefile CXXDEBUGFLAGS="$RPM_OPT_FLAGS" \
+%{__make} -f xpuzzles.Makefile xmkmf
+%{__make} -f xpuzzles.Makefile CXXDEBUGFLAGS="$RPM_OPT_FLAGS" \
 	CDEBUGFLAGS="$RPM_OPT_FLAGS"
 
 %install
@@ -32,7 +32,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/etc/X11/wmconfig
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
-make -f xpuzzles.Makefile install DESTDIR=$RPM_BUILD_ROOT
+%{__make} -f xpuzzles.Makefile install DESTDIR=$RPM_BUILD_ROOT
 
 strip --strip-unneeded $RPM_BUILD_ROOT%{_bindir}/* 
 
