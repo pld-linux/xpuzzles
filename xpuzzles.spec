@@ -1,16 +1,14 @@
 Summary:	Geometric puzzles and toys for the X Window System
 Summary(pl):	Geometryczne uk³adanki i zabawki pod X Window System
 Name:		xpuzzles
-Version:	5.5.2
-Release:	5
+Version:	5.6.2
+Release:	1
 License:	MIT
 Group:		Applications/Games
 Source0:	ftp://sunsite.unc.edu/pub/Linux/games/strategy/%{name}-%{version}.tar.gz
-Patch0:		%{name}-5.4.1-install.patch
-Patch1:		%{name}-5.4.1-nobr.patch
+Patch0:		%{name}-link.patch
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 A set of geometric puzzles and toys for the X Window System. Xpuzzles
@@ -24,19 +22,40 @@ wersjê kostki Rubika i ró¿ne inne uk³adanki w tym stylu.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 %{__make} -f xpuzzles.Makefile xmkmf
-%{__make} -f xpuzzles.Makefile CXXDEBUGFLAGS="%{rpmcflags}" \
+%{__make} -f xpuzzles.Makefile \
+	CXXDEBUGFLAGS="%{rpmcflags}" \
 	CDEBUGFLAGS="%{rpmcflags}"
 
+# not included in xpuzzles.Makefile
+cd xthreed
+xmkmf
+%{__make} \
+	CXXDEBUGFLAGS="%{rpmcflags}" \
+	CDEBUGFLAGS="%{rpmcflags}" \
+	DATAFILE="%{_datadir}/misc/xthreed.dat"
+	
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1,%{_applnkdir}/Games}
+install -d $RPM_BUILD_ROOT%{_applnkdir}/Games
 
-%{__make} -f xpuzzles.Makefile install DESTDIR=$RPM_BUILD_ROOT
+%{__make} -f xpuzzles.Makefile install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	BINDIR=%{_bindir}
 
+# not included in xpuzzles.Makefile
+%{__make} -C xthreed install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	BINDIR=%{_bindir}
+install -D xthreed/threed.dat $RPM_BUILD_ROOT%{_datadir}/misc/xthreed.dat
+
+for d in `find . -type d -maxdepth 1 -mindepth 1 | grep -v xdial` ; do
+	%{__make} -C $d install.man \
+		DESTDIR=$RPM_BUILD_ROOT \
+		MANDIR=%{_mandir}/man1
+done
 
 cat > $RPM_BUILD_ROOT%{_applnkdir}/Games/xcubes.desktop <<EOF
 [Desktop Entry]
@@ -108,6 +127,13 @@ Type=Application
 Exec=xskewb
 EOF
 
+cat > $RPM_BUILD_ROOT%{_applnkdir}/Games/xthreed.desktop << EOF
+[Desktop Entry]
+Name=xthreed
+Type=Application
+Exec=xthreed
+EOF
+
 cat > $RPM_BUILD_ROOT%{_applnkdir}/Games/xtriangles.desktop <<EOF
 [Desktop Entry]
 Name=xtriangles
@@ -133,6 +159,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/xtriangles
 %attr(755,root,root) %{_bindir}/xhexagons
 %attr(755,root,root) %{_bindir}/xmlink
+%attr(755,root,root) %{_bindir}/xthreed
+%{_datadir}/misc/xthreed.dat
 %{_mandir}/man1/xpanex.1*
 %{_mandir}/man1/xrubik.1*
 %{_mandir}/man1/xskewb.1*
@@ -144,3 +172,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/xtriangles.1*
 %{_mandir}/man1/xhexagons.1*
 %{_mandir}/man1/xmlink.1*
+%{_mandir}/man1/xthreed.1*
