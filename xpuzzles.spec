@@ -1,12 +1,12 @@
 Summary:	Geometric puzzles and toys for the X Window System
 Summary(pl):	Geometryczne uk³adanki i zabawki pod X Window System
 Name:		xpuzzles
-Version:	5.7.3
+Version:	5.7.4
 Release:	1
 License:	MIT
 Group:		Applications/Games
 Source0:	ftp://sunsite.unc.edu/pub/Linux/games/strategy/%{name}-%{version}.tar.gz
-# Source0-md5:	df25f5a1b99f7d8daf8812a23265c464
+# Source0-md5:	3c0957519b3adc02dd122075a104e036
 Patch0:		%{name}-link.patch
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
