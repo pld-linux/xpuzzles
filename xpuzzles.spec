@@ -60,7 +60,7 @@ xmkmf
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_desktopdir}
-install -d /var/games/xpuzzles
+install -d $RPM_BUILD_ROOT/var/games/xpuzzles
 
 %{__make} -f xpuzzles.Makefile install \
 	DESTDIR=$RPM_BUILD_ROOT \
