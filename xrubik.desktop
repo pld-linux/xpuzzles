@@ -1,6 +1,8 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=xskewb
+Name=xrubik
+Comment=The Rubik's Cube
+Comment[pl]=Kostka Rubika
 Type=Application
 Exec=xskewb
 Categories=Game;LogicGame;

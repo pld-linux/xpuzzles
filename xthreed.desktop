@@ -1,6 +1,8 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=xthreed
+Comment=Threed X widget
+Comment[pl]=Kontrolka X Threed
 Type=Application
 Exec=xthreed
 Categories=Game;LogicGame;

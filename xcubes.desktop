@@ -1,6 +1,8 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=xcubes
+Comment=A 3D sliding block puzzle
+Comment[pl]=Układanka z trójwymiarowych ślizgających się kostek
 Type=Application
 Exec=xcubes
 Categories=Game;LogicGame;

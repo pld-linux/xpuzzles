@@ -1,6 +1,8 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=xmlink
+Comment=The Missing Link 4x4 puzzle
+Comment[pl]=Układanka 4x4 "brakujące ogniwo"
 Type=Application
 Exec=xmlink
 Categories=Game;LogicGame;
