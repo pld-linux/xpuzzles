@@ -3,6 +3,6 @@ Encoding=UTF-8
 Name=xhexagons
 Type=Application
 Exec=xhexagons
-Categories=Game;
+Categories=Game;LogicGame;
 Terminal=false
 # vi: encoding=utf-8

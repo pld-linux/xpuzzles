@@ -3,6 +3,6 @@ Encoding=UTF-8
 Name=xthreed
 Type=Application
 Exec=xthreed
-Categories=Game;
+Categories=Game;LogicGame;
 Terminal=false
 # vi: encoding=utf-8

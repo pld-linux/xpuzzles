@@ -3,6 +3,6 @@ Encoding=UTF-8
 Name=xmlink
 Type=Application
 Exec=xmlink
-Categories=Game;
+Categories=Game;LogicGame;
 Terminal=false
 # vi: encoding=utf-8
