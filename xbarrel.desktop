@@ -5,6 +5,6 @@ Comment=Cylinder Puzzle of Japanese origin
 Comment[pl]=Układanka z cylindrów, japońskiego pochodzenia
 Type=Application
 Exec=xbarrel
-Categories=Game;LogicGame;
+Categories=Motif;Game;LogicGame;
 Terminal=false
 # vi: encoding=utf-8

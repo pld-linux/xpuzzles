@@ -5,6 +5,6 @@ Comment=Triangle - 4 Cube - Dinosaur puzzle
 Comment[pl]=Puzzle "kostka - 4 trójkąty - dinozaur"
 Type=Application
 Exec=xdino
-Categories=Game;LogicGame;
+Categories=Motif;Game;LogicGame;
 Terminal=false
 # vi: encoding=utf-8

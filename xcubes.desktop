@@ -5,6 +5,6 @@ Comment=A 3D sliding block puzzle
 Comment[pl]=Układanka z trójwymiarowych ślizgających się kostek
 Type=Application
 Exec=xcubes
-Categories=Game;LogicGame;
+Categories=Motif;Game;LogicGame;
 Terminal=false
 # vi: encoding=utf-8

@@ -5,6 +5,6 @@ Comment=The Panex puzzle
 Comment[pl]=Układanka Panex
 Type=Application
 Exec=xpanex
-Categories=Game;LogicGame;
+Categories=Motif;Game;LogicGame;
 Terminal=false
 # vi: encoding=utf-8

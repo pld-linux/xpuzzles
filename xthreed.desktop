@@ -5,6 +5,6 @@ Comment=Threed X widget
 Comment[pl]=Kontrolka X Threed
 Type=Application
 Exec=xthreed
-Categories=Game;LogicGame;
+Categories=Motif;Game;LogicGame;
 Terminal=false
 # vi: encoding=utf-8

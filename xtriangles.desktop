@@ -5,6 +5,6 @@ Comment=A sliding tile puzzle
 Comment[pl]=Układanka ślizgających się kafelków
 Type=Application
 Exec=xtriangles
-Categories=Game;LogicGame;
+Categories=Motif;Game;LogicGame;
 Terminal=false
 # vi: encoding=utf-8

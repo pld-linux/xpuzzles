@@ -5,6 +5,6 @@ Comment=The Missing Link 4x4 puzzle
 Comment[pl]=Układanka 4x4 "brakujące ogniwo"
 Type=Application
 Exec=xmlink
-Categories=Game;LogicGame;
+Categories=Motif;Game;LogicGame;
 Terminal=false
 # vi: encoding=utf-8

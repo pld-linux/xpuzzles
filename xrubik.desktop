@@ -5,6 +5,6 @@ Comment=The Rubik's Cube
 Comment[pl]=Kostka Rubika
 Type=Application
 Exec=xrubik
-Categories=Game;LogicGame;
+Categories=Motif;Game;LogicGame;
 Terminal=false
 # vi: encoding=utf-8

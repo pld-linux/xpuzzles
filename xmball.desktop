@@ -5,6 +5,6 @@ Comment=Masterball puzzle
 Comment[pl]=Układanka Masterball
 Type=Application
 Exec=xmball
-Categories=Game;LogicGame;
+Categories=Motif;Game;LogicGame;
 Terminal=false
 # vi: encoding=utf-8

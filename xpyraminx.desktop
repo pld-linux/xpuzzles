@@ -5,6 +5,6 @@ Comment=Triangle puzzle
 Comment[pl]=Układanka z trójkątów
 Type=Application
 Exec=xpyraminx
-Categories=Game;LogicGame;
+Categories=Motif;Game;LogicGame;
 Terminal=false
 # vi: encoding=utf-8

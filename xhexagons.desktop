@@ -1,10 +1,10 @@
-[Desktop Entry]
+6c[Desktop Entry]
 Encoding=UTF-8
 Name=xhexagons
 Comment=A hexagonal version of the 15 puzzle
 Comment[pl]=Sześciokątka wersja układanki "15"
 Type=Application
 Exec=xhexagons
-Categories=Game;LogicGame;
+Categories=Motif;Game;LogicGame;
 Terminal=false
 # vi: encoding=utf-8

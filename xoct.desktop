@@ -1,10 +1,10 @@
-[Desktop Entry]
+6c[Desktop Entry]
 Encoding=UTF-8
 Name=xoct
 Comment=Magic Octahedron puzzle
 Comment[pl]=Układanka "magiczny ośmiościan"
 Type=Application
 Exec=xoct
-Categories=Game;LogicGame;
+Categories=Motif;Game;LogicGame;
 Terminal=false
 # vi: encoding=utf-8
