@@ -5,7 +5,7 @@ Version:	5.5.2
 Release:	5
 License:	MIT
 Group:		Applications/Games
-Source:		ftp://sunsite.unc.edu/pub/Linux/games/strategy/%{name}-%{version}.tar.gz
+Source0:	ftp://sunsite.unc.edu/pub/Linux/games/strategy/%{name}-%{version}.tar.gz
 Patch0:		%{name}-5.4.1-install.patch
 Patch1:		%{name}-5.4.1-nobr.patch
 BuildRequires:	XFree86-devel
@@ -15,7 +15,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_mandir		/usr/X11R6/man
 
 %description
-A set of geometric puzzles and toys for the X Window System.  Xpuzzles
+A set of geometric puzzles and toys for the X Window System. Xpuzzles
 includes a version of Rubik's cube and various other geometric Rubik's
 cube style puzzles.
 
