@@ -1,12 +1,15 @@
-Summary:	Geometric puzzles and toys for the X Window System.
+Summary:	Geometric puzzles and toys for the X Window System
+Summary(pl):	Geometryczne uk³adanki i zabawki pod X Window System
 Name:		xpuzzles
 Version:	5.4.1
 Release:	7
-Copyright:	MIT
-Group:		Games
+License:	MIT
+Group:		Applications/Games
+Group(de):	Applikationen/Spiele
+Group(pl):	Aplikacje/Gry
 Source:		ftp://sunsite.unc.edu/pub/Linux/games/strategy/%{name}-%{version}.tgz
-Patch:		xpuzzles-5.4.1-install.patch
-Patch1:		xpuzzles-5.4.1-nobr.patch
+Patch0:		%{name}-5.4.1-install.patch
+Patch1:		%{name}-5.4.1-nobr.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -24,8 +27,8 @@ cube style puzzles.
 
 %build
 %{__make} -f xpuzzles.Makefile xmkmf
-%{__make} -f xpuzzles.Makefile CXXDEBUGFLAGS="$RPM_OPT_FLAGS" \
-	CDEBUGFLAGS="$RPM_OPT_FLAGS"
+%{__make} -f xpuzzles.Makefile CXXDEBUGFLAGS="%{rpmcflags}" \
+	CDEBUGFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -33,10 +36,6 @@ install -d $RPM_BUILD_ROOT/etc/X11/wmconfig
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
 %{__make} -f xpuzzles.Makefile install DESTDIR=$RPM_BUILD_ROOT
-
-strip --strip-unneeded $RPM_BUILD_ROOT%{_bindir}/* 
-
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/*
 
 cat > $RPM_BUILD_ROOT/etc/X11/wmconfig/xcubes <<EOF
 xcubes name "xcubes"
@@ -142,14 +141,14 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/xtriangles
 %attr(755,root,root) %{_bindir}/xhexagons
 %attr(755,root,root) %{_bindir}/xmlink
-%{_mandir}/man1/xpanex.1.gz
-%{_mandir}/man1/xrubik.1.gz
-%{_mandir}/man1/xskewb.1.gz
-%{_mandir}/man1/xdino.1.gz
-%{_mandir}/man1/xpyraminx.1.gz
-%{_mandir}/man1/xoct.1.gz
-%{_mandir}/man1/xmball.1.gz
-%{_mandir}/man1/xcubes.1.gz
-%{_mandir}/man1/xtriangles.1.gz
-%{_mandir}/man1/xhexagons.1.gz
-%{_mandir}/man1/xmlink.1.gz
+%{_mandir}/man1/xpanex.1*
+%{_mandir}/man1/xrubik.1*
+%{_mandir}/man1/xskewb.1*
+%{_mandir}/man1/xdino.1*
+%{_mandir}/man1/xpyraminx.1*
+%{_mandir}/man1/xoct.1*
+%{_mandir}/man1/xmball.1*
+%{_mandir}/man1/xcubes.1*
+%{_mandir}/man1/xtriangles.1*
+%{_mandir}/man1/xhexagons.1*
+%{_mandir}/man1/xmlink.1*
