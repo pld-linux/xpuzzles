@@ -82,7 +82,7 @@ install %{SOURCE1} %{SOURCE2} %{SOURCE3} %{SOURCE4} %{SOURCE5} %{SOURCE6} \
 	%{SOURCE7} %{SOURCE8} %{SOURCE9} %{SOURCE10} %{SOURCE11} %{SOURCE12} \
 	%{SOURCE13} $RPM_BUILD_ROOT%{_desktopdir}
 
-touch /var/games/xpuzzles/{barrel,cubes,dino,hexagons,mball,mlink,oct,panex,pyramix,rubik,skewb,threed,triangles}.scores
+touch $RPM_BUILD_ROOT/var/games/xpuzzles/{barrel,cubes,dino,hexagons,mball,mlink,oct,panex,pyramix,rubik,skewb,threed,triangles}.scores
 
 %clean
 rm -rf $RPM_BUILD_ROOT
