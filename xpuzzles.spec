@@ -5,8 +5,6 @@ Version:	5.5.2
 Release:	5
 License:	MIT
 Group:		Applications/Games
-Group(de):	Applikationen/Spiele
-Group(pl):	Aplikacje/Gry
 Source:		ftp://sunsite.unc.edu/pub/Linux/games/strategy/%{name}-%{version}.tar.gz
 Patch0:		%{name}-5.4.1-install.patch
 Patch1:		%{name}-5.4.1-nobr.patch
