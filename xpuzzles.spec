@@ -4,7 +4,7 @@ Name:		xpuzzles
 Version:	5.7.4
 Release:	1
 License:	MIT
-Group:		Applications/Games
+Group:		X11/Applications/Games
 Source0:	ftp://sunsite.unc.edu/pub/Linux/games/strategy/%{name}-%{version}.tar.gz
 # Source0-md5:	3c0957519b3adc02dd122075a104e036
 Patch0:		%{name}-link.patch
