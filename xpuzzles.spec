@@ -5,9 +5,10 @@ Version:	5.7.4
 Release:	1
 License:	MIT
 Group:		X11/Applications/Games
-Source0:	ftp://sunsite.unc.edu/pub/Linux/games/strategy/%{name}-%{version}.tar.gz
+Source0:	http://www.tux.org/pub/tux/xpuzzles/%{name}-%{version}.tar.gz
 # Source0-md5:	3c0957519b3adc02dd122075a104e036
 Patch0:		%{name}-link.patch
+URL:		http://www.tux.org/~bagleyd/puzzles.html
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -58,88 +59,100 @@ for d in `find . -type d -maxdepth 1 -mindepth 1 | grep -v xdial` ; do
 		MANDIR=%{_mandir}/man1
 done
 
-cat > $RPM_BUILD_ROOT%{_applnkdir}/Games/xcubes.desktop <<EOF
+cat > $RPM_BUILD_ROOT%{_desktopdir}/xcubes.desktop <<EOF
 [Desktop Entry]
 Name=xcubes
 Type=Application
 Exec=xcubes
+Categories=Game;
 EOF
 
-cat > $RPM_BUILD_ROOT%{_applnkdir}/Games/xdino.desktop <<EOF
+cat > $RPM_BUILD_ROOT%{_desktopdir}/xdino.desktop <<EOF
 [Desktop Entry]
 Name=xdino
 Type=Application
 Exec=xdino
+Categories=Game;
 EOF
 
-cat > $RPM_BUILD_ROOT%{_applnkdir}/Games/xhexagons.desktop <<EOF
+cat > $RPM_BUILD_ROOT%{_desktopdir}/xhexagons.desktop <<EOF
 [Desktop Entry]
 Name=xhexagons
 Type=Application
 Exec=xhexagons
+Categories=Game;
 EOF
 
-cat > $RPM_BUILD_ROOT%{_applnkdir}/Games/xmball.desktop <<EOF
+cat > $RPM_BUILD_ROOT%{_desktopdir}/xmball.desktop <<EOF
 [Desktop Entry]
 Name=xmball
 Type=Application
 Exec=xmball
+Categories=Game;
 EOF
 
-cat > $RPM_BUILD_ROOT%{_applnkdir}/Games/xmlink.desktop <<EOF
+cat > $RPM_BUILD_ROOT%{_desktopdir}/xmlink.desktop <<EOF
 [Desktop Entry]
 Name=xmlink
 Type=Application
 Exec=xmlink
+Categories=Game;
 EOF
 
-cat > $RPM_BUILD_ROOT%{_applnkdir}/Games/xoct.desktop <<EOF
+cat > $RPM_BUILD_ROOT%{_desktopdir}/xoct.desktop <<EOF
 [Desktop Entry]
 Name=xoct
 Type=Application
 Exec=xoct
+Categories=Game;
 EOF
 
-cat > $RPM_BUILD_ROOT%{_applnkdir}/Games/xpanex.desktop <<EOF
+cat > $RPM_BUILD_ROOT%{_desktopdir}/xpanex.desktop <<EOF
 [Desktop Entry]
 Name=xpanex
 Type=Application
 Exec=xpanex
+Categories=Game;
 EOF
 
-cat > $RPM_BUILD_ROOT%{_applnkdir}/Games/xpyraminx.desktop <<EOF
+cat > $RPM_BUILD_ROOT%{_desktopdir}/xpyraminx.desktop <<EOF
 [Desktop Entry]
 Name=xpyraminx
 Type=Application
 Exec=xpyraminx
+Categories=Game;
 EOF
 
-cat > $RPM_BUILD_ROOT%{_applnkdir}/Games/xrubik.desktop <<EOF
+cat > $RPM_BUILD_ROOT%{_desktopdir}/xrubik.desktop <<EOF
 [Desktop Entry]
 Name=xskewb
 Type=Application
 Exec=xskewb
+Categories=Game;
 EOF
 
-cat > $RPM_BUILD_ROOT%{_applnkdir}/Games/xskewb.desktop <<EOF
+cat > $RPM_BUILD_ROOT%{_desktopdir}/xskewb.desktop <<EOF
 [Desktop Entry]
 Name=xskewb
 Type=Application
 Exec=xskewb
+Categories=Game;
 EOF
 
-cat > $RPM_BUILD_ROOT%{_applnkdir}/Games/xthreed.desktop << EOF
+cat > $RPM_BUILD_ROOT%{_desktopdir}/xthreed.desktop << EOF
 [Desktop Entry]
 Name=xthreed
 Type=Application
 Exec=xthreed
+Categories=Game;
 EOF
 
-cat > $RPM_BUILD_ROOT%{_applnkdir}/Games/xtriangles.desktop <<EOF
+cat > $RPM_BUILD_ROOT%{_desktopdir}/xtriangles.desktop <<EOF
 [Desktop Entry]
 Name=xtriangles
 Type=Application
 Exec=xtriangles
+Categories=Game;
 EOF
 
 %clean
@@ -148,7 +161,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc xpuzzles.README
-%{_applnkdir}/Games/*.desktop
 %attr(755,root,root) %{_bindir}/xpanex
 %attr(755,root,root) %{_bindir}/xrubik
 %attr(755,root,root) %{_bindir}/xskewb
@@ -162,6 +174,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/xmlink
 %attr(755,root,root) %{_bindir}/xthreed
 %{_datadir}/misc/xthreed.dat
+%{_desktopdir}/*.desktop
 %{_mandir}/man1/xpanex.1*
 %{_mandir}/man1/xrubik.1*
 %{_mandir}/man1/xskewb.1*
