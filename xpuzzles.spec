@@ -2,7 +2,7 @@ Summary:	Geometric puzzles and toys for the X Window System
 Summary(pl):	Geometryczne uk³adanki i zabawki pod X Window System
 Name:		xpuzzles
 Version:	7.0.1
-Release:	3
+Release:	4
 License:	MIT
 Group:		X11/Applications/Games
 Source0:	http://www.tux.org/pub/tux/xpuzzles/%{name}-%{version}.tar.bz2
@@ -58,6 +58,7 @@ xmkmf
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_desktopdir}
+install -d /var/games/xpuzzles
 
 %{__make} -f xpuzzles.Makefile install \
 	DESTDIR=$RPM_BUILD_ROOT \
@@ -78,6 +79,9 @@ done
 install %{SOURCE1} %{SOURCE2} %{SOURCE3} %{SOURCE4} %{SOURCE5} %{SOURCE6} \
 	%{SOURCE7} %{SOURCE8} %{SOURCE9} %{SOURCE10} %{SOURCE11} %{SOURCE12} \
 	%{SOURCE13} $RPM_BUILD_ROOT%{_desktopdir}
+
+%post
+touch /var/games/xpuzzles/{barrel,cubes,dino,hexagons,mball,mlink,oct,panex,pyramix,rubik,skewb,threed,triangles}.scores
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -100,6 +104,20 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/xtriangles
 %{_datadir}/misc/xthreed.dat
 %{_desktopdir}/*.desktop
+%dir /var/games/xpuzzles
+%ghost /var/games/xpuzzles/barrel.scores
+%ghost /var/games/xpuzzles/cubes.scores
+%ghost /var/games/xpuzzles/dino.scores
+%ghost /var/games/xpuzzles/hexagons.scores
+%ghost /var/games/xpuzzles/mball.scores
+%ghost /var/games/xpuzzles/mlink.scores
+%ghost /var/games/xpuzzles/oct.scores
+%ghost /var/games/xpuzzles/panex.scores
+%ghost /var/games/xpuzzles/pyramix.scores
+%ghost /var/games/xpuzzles/rubik.scores
+%ghost /var/games/xpuzzles/skewb.scores
+%ghost /var/games/xpuzzles/threed.scores
+%ghost /var/games/xpuzzles/triangles.scores
 %{_mandir}/man1/xbarrel.1*
 %{_mandir}/man1/xcubes.1*
 %{_mandir}/man1/xdino.1*
