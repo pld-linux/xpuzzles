@@ -1,15 +1,15 @@
 Summary:	Geometric puzzles and toys for the X Window System
 Summary(pl):	Geometryczne uk³adanki i zabawki pod X Window System
 Name:		xpuzzles
-Version:	5.7.4
+Version:	7.0.1
 Release:	1
 License:	MIT
 Group:		X11/Applications/Games
-Source0:	http://www.tux.org/pub/tux/xpuzzles/%{name}-%{version}.tar.gz
-# Source0-md5:	3c0957519b3adc02dd122075a104e036
-Patch0:		%{name}-link.patch
+Source0:	http://www.tux.org/pub/tux/xpuzzles/%{name}-%{version}.tar.bz2
+# Source0-md5:	391e4b300cf815d91aea228448647b48
 URL:		http://www.tux.org/~bagleyd/puzzles.html
 BuildRequires:	XFree86-devel
+BuildRequires:	motif-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -23,25 +23,28 @@ wersjê kostki Rubika i ró¿ne inne uk³adanki w tym stylu.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__make} -f xpuzzles.Makefile xmkmf
 %{__make} -f xpuzzles.Makefile \
-	CXXDEBUGFLAGS="%{rpmcflags}" \
-	CDEBUGFLAGS="%{rpmcflags}"
+	CC="%{__cc}" \
+	CDEBUGFLAGS="%{rpmcflags}" \
+	XMDEF="-DHAVE_MOTIF" \
+	XMLIB="-lXm"
 
 # not included in xpuzzles.Makefile
 cd xthreed
 xmkmf
 %{__make} \
-	CXXDEBUGFLAGS="%{rpmcflags}" \
+	CC="%{__cc}" \
 	CDEBUGFLAGS="%{rpmcflags}" \
+	XMDEF="-DHAVE_MOTIF" \
+	XMLIB="-lXm" \
 	DATAFILE="%{_datadir}/misc/xthreed.dat"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_applnkdir}/Games
+install -d $RPM_BUILD_ROOT%{_desktopdir}
 
 %{__make} -f xpuzzles.Makefile install \
 	DESTDIR=$RPM_BUILD_ROOT \
@@ -58,6 +61,14 @@ for d in `find . -type d -maxdepth 1 -mindepth 1 | grep -v xdial` ; do
 		DESTDIR=$RPM_BUILD_ROOT \
 		MANDIR=%{_mandir}/man1
 done
+
+cat > $RPM_BUILD_ROOT%{_desktopdir}/xbarrel.desktop <<EOF
+[Desktop Entry]
+Name=xbarrel
+Type=Application
+Exec=xbarrel
+Categories=Game;
+EOF
 
 cat > $RPM_BUILD_ROOT%{_desktopdir}/xcubes.desktop <<EOF
 [Desktop Entry]
@@ -161,29 +172,31 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc xpuzzles.README
+%attr(755,root,root) %{_bindir}/xbarrel
+%attr(755,root,root) %{_bindir}/xcubes
+%attr(755,root,root) %{_bindir}/xdino
+%attr(755,root,root) %{_bindir}/xhexagons
+%attr(755,root,root) %{_bindir}/xmball
+%attr(755,root,root) %{_bindir}/xmlink
+%attr(755,root,root) %{_bindir}/xoct
 %attr(755,root,root) %{_bindir}/xpanex
+%attr(755,root,root) %{_bindir}/xpyraminx
 %attr(755,root,root) %{_bindir}/xrubik
 %attr(755,root,root) %{_bindir}/xskewb
-%attr(755,root,root) %{_bindir}/xdino
-%attr(755,root,root) %{_bindir}/xpyraminx
-%attr(755,root,root) %{_bindir}/xoct
-%attr(755,root,root) %{_bindir}/xmball
-%attr(755,root,root) %{_bindir}/xcubes
-%attr(755,root,root) %{_bindir}/xtriangles
-%attr(755,root,root) %{_bindir}/xhexagons
-%attr(755,root,root) %{_bindir}/xmlink
 %attr(755,root,root) %{_bindir}/xthreed
+%attr(755,root,root) %{_bindir}/xtriangles
 %{_datadir}/misc/xthreed.dat
 %{_desktopdir}/*.desktop
+%{_mandir}/man1/xbarrel.1*
+%{_mandir}/man1/xcubes.1*
+%{_mandir}/man1/xdino.1*
+%{_mandir}/man1/xhexagons.1*
+%{_mandir}/man1/xmball.1*
+%{_mandir}/man1/xmlink.1*
+%{_mandir}/man1/xoct.1*
 %{_mandir}/man1/xpanex.1*
+%{_mandir}/man1/xpyraminx.1*
 %{_mandir}/man1/xrubik.1*
 %{_mandir}/man1/xskewb.1*
-%{_mandir}/man1/xdino.1*
-%{_mandir}/man1/xpyraminx.1*
-%{_mandir}/man1/xoct.1*
-%{_mandir}/man1/xmball.1*
-%{_mandir}/man1/xcubes.1*
-%{_mandir}/man1/xtriangles.1*
-%{_mandir}/man1/xhexagons.1*
-%{_mandir}/man1/xmlink.1*
 %{_mandir}/man1/xthreed.1*
+%{_mandir}/man1/xtriangles.1*
