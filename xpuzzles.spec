@@ -37,7 +37,7 @@ xmkmf
 	CXXDEBUGFLAGS="%{rpmcflags}" \
 	CDEBUGFLAGS="%{rpmcflags}" \
 	DATAFILE="%{_datadir}/misc/xthreed.dat"
-	
+
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_applnkdir}/Games
