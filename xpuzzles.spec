@@ -75,6 +75,10 @@ for d in `find . -type d -maxdepth 1 -mindepth 1 | grep -v xdial` ; do
 		MANDIR=%{_mandir}/man1
 done
 
+install %{SOURCE1} %{SOURCE2} %{SOURCE3} %{SOURCE4} %{SOURCE5} %{SOURCE6} \
+	%{SOURCE7} %{SOURCE8} %{SOURCE9} %{SOURCE10} %{SOURCE11} %{SOURCE12} \
+	%{SOURCE13} $RPM_BUILD_ROOT%{_desktopdir}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
