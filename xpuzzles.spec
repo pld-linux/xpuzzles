@@ -3,7 +3,7 @@ Name:		xpuzzles
 Version:	5.4.1
 Release:	7
 Copyright:	MIT
-Group:		Amusements/Games
+Group:		Games
 Source:		ftp://sunsite.unc.edu/pub/Linux/games/strategy/%{name}-%{version}.tgz
 Patch:		xpuzzles-5.4.1-install.patch
 Patch1:		xpuzzles-5.4.1-nobr.patch
