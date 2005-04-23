@@ -2,7 +2,7 @@ Summary:	Geometric puzzles and toys for the X Window System
 Summary(pl):	Geometryczne uk³adanki i zabawki pod X Window System
 Name:		xpuzzles
 Version:	7.0.1
-Release:	6
+Release:	7
 License:	MIT
 Group:		X11/Applications/Games
 Source0:	http://www.tux.org/pub/tux/xpuzzles/%{name}-%{version}.tar.bz2
@@ -23,7 +23,7 @@ Source13:	xtriangles.desktop
 Patch0:		%{name}-man.patch
 URL:		http://www.tux.org/~bagleyd/puzzles.html
 BuildRequires:	XFree86-devel
-BuildRequires:	motif-devel
+BuildRequires:	openmotif-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
