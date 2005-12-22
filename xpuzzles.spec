@@ -1,12 +1,12 @@
 Summary:	Geometric puzzles and toys for the X Window System
 Summary(pl):	Geometryczne uk³adanki i zabawki pod X Window System
 Name:		xpuzzles
-Version:	7.0.1
-Release:	7
+Version:	7.1.5
+Release:	1
 License:	MIT
 Group:		X11/Applications/Games
 Source0:	http://www.tux.org/pub/tux/xpuzzles/%{name}-%{version}.tar.bz2
-# Source0-md5:	391e4b300cf815d91aea228448647b48
+# Source0-md5:	38d9bef9aeacfc030414b04c8b60cdd4
 Source1:	xbarrel.desktop
 Source2:	xcubes.desktop
 Source3:	xdino.desktop
@@ -70,7 +70,6 @@ install -d $RPM_BUILD_ROOT/var/games/xpuzzles
 %{__make} -C xthreed install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	BINDIR=%{_bindir}
-install -D xthreed/threed.dat $RPM_BUILD_ROOT%{_datadir}/misc/xthreed.dat
 
 for d in `find . -type d -maxdepth 1 -mindepth 1 | grep -v xdial` ; do
 	%{__make} -C $d install.man \
@@ -108,7 +107,6 @@ chgrp games /var/games/xpuzzles/{barrel,cubes,dino,hexagons,mball,mlink,oct,pane
 %attr(755,root,root) %{_bindir}/xskewb
 %attr(755,root,root) %{_bindir}/xthreed
 %attr(755,root,root) %{_bindir}/xtriangles
-%{_datadir}/misc/xthreed.dat
 %{_desktopdir}/*.desktop
 %dir /var/games/xpuzzles
 %attr(664,root,games) %ghost /var/games/xpuzzles/barrel.scores
