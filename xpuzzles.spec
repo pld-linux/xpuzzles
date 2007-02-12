@@ -1,5 +1,5 @@
 Summary:	Geometric puzzles and toys for the X Window System
-Summary(pl.UTF-8):   Geometryczne układanki i zabawki pod X Window System
+Summary(pl.UTF-8):	Geometryczne układanki i zabawki pod X Window System
 Name:		xpuzzles
 Version:	7.1.5
 Release:	1
