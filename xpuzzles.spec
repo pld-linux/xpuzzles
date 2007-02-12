@@ -1,5 +1,5 @@
 Summary:	Geometric puzzles and toys for the X Window System
-Summary(pl):	Geometryczne uk³adanki i zabawki pod X Window System
+Summary(pl.UTF-8):   Geometryczne ukÅ‚adanki i zabawki pod X Window System
 Name:		xpuzzles
 Version:	7.1.5
 Release:	1
@@ -31,9 +31,9 @@ A set of geometric puzzles and toys for the X Window System. Xpuzzles
 includes a version of Rubik's cube and various other geometric Rubik's
 cube style puzzles.
 
-%description -l pl
-Zestaw geometrycznych uk³adanek i zabawek pod X Window System. Zawiera
-wersjê kostki Rubika i ró¿ne inne uk³adanki w tym stylu.
+%description -l pl.UTF-8
+Zestaw geometrycznych ukÅ‚adanek i zabawek pod X Window System. Zawiera
+wersjÄ™ kostki Rubika i rÃ³Å¼ne inne ukÅ‚adanki w tym stylu.
 
 %prep
 %setup -q
