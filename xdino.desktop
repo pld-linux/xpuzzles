@@ -3,6 +3,7 @@ Name=xdino
 Comment=Triangle - 4 Cube - Dinosaur puzzle
 Comment[pl]=Puzzle "kostka - 4 trójkąty - dinozaur"
 Type=Application
+Icon=xdino.png
 Exec=xdino
 Categories=Motif;Game;LogicGame;
 Terminal=false

@@ -3,6 +3,7 @@ Name=xcubes
 Comment=A 3D sliding block puzzle
 Comment[pl]=Układanka z trójwymiarowych ślizgających się kostek
 Type=Application
+Icon=xcubes.png
 Exec=xcubes
 Categories=Motif;Game;LogicGame;
 Terminal=false

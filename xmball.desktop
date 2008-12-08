@@ -3,6 +3,7 @@ Name=xmball
 Comment=Masterball puzzle
 Comment[pl]=Układanka Masterball
 Type=Application
+Icon=xmball.png
 Exec=xmball
 Categories=Motif;Game;LogicGame;
 Terminal=false

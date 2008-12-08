@@ -3,6 +3,7 @@ Name=xbarrel
 Comment=Cylinder Puzzle of Japanese origin
 Comment[pl]=Układanka z cylindrów, japońskiego pochodzenia
 Type=Application
+Icon=xbarrel.png
 Exec=xbarrel
 Categories=Motif;Game;LogicGame;
 Terminal=false

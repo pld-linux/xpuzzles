@@ -3,6 +3,7 @@ Name=xpyraminx
 Comment=Triangle puzzle
 Comment[pl]=Układanka z trójkątów
 Type=Application
+Icon=xpyraminx.png
 Exec=xpyraminx
 Categories=Motif;Game;LogicGame;
 Terminal=false

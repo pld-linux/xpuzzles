@@ -3,6 +3,7 @@ Name=xhexagons
 Comment=A hexagonal version of the 15 puzzle
 Comment[pl]=Sześciokątka wersja układanki "15"
 Type=Application
+Icon=xhexagons.png
 Exec=xhexagons
 Categories=Motif;Game;LogicGame;
 Terminal=false

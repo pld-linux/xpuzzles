@@ -3,6 +3,7 @@ Name=xskewb
 Comment=Puzzle with faces cut by a diamond
 Comment[pl]=Układanka o powierzchni pociętej diamentem
 Type=Application
+Icon=xskewb.png
 Exec=xskewb
 Categories=Motif;Game;LogicGame;
 Terminal=false

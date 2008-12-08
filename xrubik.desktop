@@ -3,6 +3,7 @@ Name=xrubik
 Comment=The Rubik's Cube
 Comment[pl]=Kostka Rubika
 Type=Application
+Icon=xrubik.png
 Exec=xrubik
 Categories=Motif;Game;LogicGame;
 Terminal=false

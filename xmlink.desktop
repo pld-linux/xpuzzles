@@ -3,6 +3,7 @@ Name=xmlink
 Comment=The Missing Link 4x4 puzzle
 Comment[pl]=Układanka 4x4 "brakujące ogniwo"
 Type=Application
+Icon=xmlink.png
 Exec=xmlink
 Categories=Motif;Game;LogicGame;
 Terminal=false

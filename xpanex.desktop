@@ -3,6 +3,7 @@ Name=xpanex
 Comment=The Panex puzzle
 Comment[pl]=Układanka Panex
 Type=Application
+Icon=xpanex.png
 Exec=xpanex
 Categories=Motif;Game;LogicGame;
 Terminal=false

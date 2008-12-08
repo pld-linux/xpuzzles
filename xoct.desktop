@@ -3,6 +3,7 @@ Name=xoct
 Comment=Magic Octahedron puzzle
 Comment[pl]=Układanka "magiczny ośmiościan"
 Type=Application
+Icon=xoct.png
 Exec=xoct
 Categories=Motif;Game;LogicGame;
 Terminal=false
