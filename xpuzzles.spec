@@ -1,12 +1,12 @@
 Summary:	Geometric puzzles and toys for the X Window System
 Summary(pl.UTF-8):	Geometryczne układanki i zabawki pod X Window System
 Name:		xpuzzles
-Version:	7.1.5
+Version:	7.4.2
 Release:	1
 License:	MIT
 Group:		X11/Applications/Games
 Source0:	http://www.tux.org/pub/tux/xpuzzles/%{name}-%{version}.tar.bz2
-# Source0-md5:	38d9bef9aeacfc030414b04c8b60cdd4
+# Source0-md5:	c0b7176db3cbad952a23d470a7e7a399
 Source1:	xbarrel.desktop
 Source2:	xcubes.desktop
 Source3:	xdino.desktop
@@ -22,8 +22,9 @@ Source12:	xthreed.desktop
 Source13:	xtriangles.desktop
 Patch0:		%{name}-man.patch
 URL:		http://www.tux.org/~bagleyd/puzzles.html
-BuildRequires:	XFree86-devel
 BuildRequires:	openmotif-devel
+BuildRequires:	xorg-cf-files
+BuildRequires:	xorg-util-imake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -48,7 +49,7 @@ wersję kostki Rubika i różne inne układanki w tym stylu.
 	XMLIB="-lXm"
 
 # not included in xpuzzles.Makefile
-cd xthreed
+cd threed
 xmkmf
 %{__make} \
 	CC="%{__cc}" \
@@ -59,7 +60,7 @@ xmkmf
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_desktopdir}
+install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 install -d $RPM_BUILD_ROOT/var/games/xpuzzles
 
 %{__make} -f xpuzzles.Makefile install \
@@ -67,11 +68,11 @@ install -d $RPM_BUILD_ROOT/var/games/xpuzzles
 	BINDIR=%{_bindir}
 
 # not included in xpuzzles.Makefile
-%{__make} -C xthreed install \
+%{__make} -C threed install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	BINDIR=%{_bindir}
 
-for d in `find . -type d -maxdepth 1 -mindepth 1 | grep -v xdial` ; do
+for d in `find . -type d -maxdepth 1 -mindepth 1 | grep -v dial` ; do
 	%{__make} -C $d install.man \
 		DESTDIR=$RPM_BUILD_ROOT \
 		MANDIR=%{_mandir}/man1
@@ -81,15 +82,29 @@ install %{SOURCE1} %{SOURCE2} %{SOURCE3} %{SOURCE4} %{SOURCE5} %{SOURCE6} \
 	%{SOURCE7} %{SOURCE8} %{SOURCE9} %{SOURCE10} %{SOURCE11} %{SOURCE12} \
 	%{SOURCE13} $RPM_BUILD_ROOT%{_desktopdir}
 
-touch $RPM_BUILD_ROOT/var/games/xpuzzles/{barrel,cubes,dino,hexagons,mball,mlink,oct,panex,pyramix,rubik,skewb,threed,triangles}.scores
+install barrel/pixmaps/normal.barrel.png $RPM_BUILD_ROOT%{_pixmapsdir}/xbarrel.png
+install cubes/pixmaps/normal.cubes.png $RPM_BUILD_ROOT%{_pixmapsdir}/xcubes.png
+install dino/pixmaps/normal.dino.png $RPM_BUILD_ROOT%{_pixmapsdir}/xdino.png
+install hexagons/pixmaps/normal.hexagons.png $RPM_BUILD_ROOT%{_pixmapsdir}/xhexagons.png
+install mball/pixmaps/normal.mball.png $RPM_BUILD_ROOT%{_pixmapsdir}/xmball.png
+install mlink/pixmaps/normal.mlink.png $RPM_BUILD_ROOT%{_pixmapsdir}/xmlink.png
+install oct/pixmaps/normal.oct.png $RPM_BUILD_ROOT%{_pixmapsdir}/xoct.png
+install panex/pixmaps/normal.panex.png $RPM_BUILD_ROOT%{_pixmapsdir}/xpanex.png
+install pyraminx/pixmaps/normal.pyraminx.png $RPM_BUILD_ROOT%{_pixmapsdir}/xpyraminx.png
+install rubik/pixmaps/normal.rubik.png $RPM_BUILD_ROOT%{_pixmapsdir}/xrubik.png
+install skewb/pixmaps/normal.skewb.png $RPM_BUILD_ROOT%{_pixmapsdir}/xskewb.png
+install threed/pixmaps/normal.threed.png $RPM_BUILD_ROOT%{_pixmapsdir}/xthreed.png
+install triangles/pixmaps/normal.triangles.png $RPM_BUILD_ROOT%{_pixmapsdir}/xtriangles.png
+
+touch $RPM_BUILD_ROOT/var/games/xpuzzles/{barrel,cubes,dino,hexagons,mball,mlink,oct,panex,pyraminx,rubik,skewb,threed,triangles}.scores
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %post
 umask 002
-touch /var/games/xpuzzles/{barrel,cubes,dino,hexagons,mball,mlink,oct,panex,pyramix,rubik,skewb,threed,triangles}.scores
-chgrp games /var/games/xpuzzles/{barrel,cubes,dino,hexagons,mball,mlink,oct,panex,pyramix,rubik,skewb,threed,triangles}.scores
+touch /var/games/xpuzzles/{barrel,cubes,dino,hexagons,mball,mlink,oct,panex,pyraminx,rubik,skewb,threed,triangles}.scores
+chgrp games /var/games/xpuzzles/{barrel,cubes,dino,hexagons,mball,mlink,oct,panex,pyraminx,rubik,skewb,threed,triangles}.scores
 
 %files
 %defattr(644,root,root,755)
@@ -108,6 +123,7 @@ chgrp games /var/games/xpuzzles/{barrel,cubes,dino,hexagons,mball,mlink,oct,pane
 %attr(755,root,root) %{_bindir}/xthreed
 %attr(755,root,root) %{_bindir}/xtriangles
 %{_desktopdir}/*.desktop
+%{_pixmapsdir}/*.png
 %dir /var/games/xpuzzles
 %attr(664,root,games) %ghost /var/games/xpuzzles/barrel.scores
 %attr(664,root,games) %ghost /var/games/xpuzzles/cubes.scores
@@ -117,7 +133,7 @@ chgrp games /var/games/xpuzzles/{barrel,cubes,dino,hexagons,mball,mlink,oct,pane
 %attr(664,root,games) %ghost /var/games/xpuzzles/mlink.scores
 %attr(664,root,games) %ghost /var/games/xpuzzles/oct.scores
 %attr(664,root,games) %ghost /var/games/xpuzzles/panex.scores
-%attr(664,root,games) %ghost /var/games/xpuzzles/pyramix.scores
+%attr(664,root,games) %ghost /var/games/xpuzzles/pyraminx.scores
 %attr(664,root,games) %ghost /var/games/xpuzzles/rubik.scores
 %attr(664,root,games) %ghost /var/games/xpuzzles/skewb.scores
 %attr(664,root,games) %ghost /var/games/xpuzzles/threed.scores
