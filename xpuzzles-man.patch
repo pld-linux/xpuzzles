@@ -1,5 +1,5 @@
---- xpuzzles-7.0.1/xbarrel/xbarrel.man~	2004-07-18 23:57:08.000000000 +0000
-+++ xpuzzles-7.0.1/xbarrel/xbarrel.man	2004-07-18 23:57:08.000000000 +0000
+--- xpuzzles-7.0.1/barrel/xbarrel.man~	2004-07-18 23:57:08.000000000 +0000
++++ xpuzzles-7.0.1/barrel/xbarrel.man	2004-07-18 23:57:08.000000000 +0000
 @@ -24,7 +24,7 @@
  .SH NAME
  xbarrel \- Barrel X widget
@@ -9,8 +9,8 @@
  [-geometry [{width}][x{height}][{+-}{xoff}[{+-}{yoff}]]]
  [-display [{host}]:[{vs}]] [-[no]mono] [-[no]{reverse|rv}]
  [-{foreground|fg} {color}] [-{background|bg} {color}]
---- xpuzzles-7.0.1/xcubes/xcubes.man~	2004-07-18 23:57:11.000000000 +0000
-+++ xpuzzles-7.0.1/xcubes/xcubes.man	2004-07-18 23:57:11.000000000 +0000
+--- xpuzzles-7.0.1/cubes/xcubes.man~	2004-07-18 23:57:11.000000000 +0000
++++ xpuzzles-7.0.1/cubes/xcubes.man	2004-07-18 23:57:11.000000000 +0000
 @@ -24,7 +24,7 @@
  .SH NAME
  xcubes \- Cubes X widget
@@ -20,8 +20,8 @@
  [-geometry [{width}][x{height}][{+-}{xoff}[{+-}{yoff}]]]
  [-display [{host}]:[{vs}]] [-[no]mono] [-[no]{reverse|rv}]
  [-{foreground|fg} {color}] [-{background|bg} {color}]
---- xpuzzles-7.0.1/xdino/xdino.man~	2004-07-18 23:57:16.000000000 +0000
-+++ xpuzzles-7.0.1/xdino/xdino.man	2004-07-18 23:57:16.000000000 +0000
+--- xpuzzles-7.0.1/dino/xdino.man~	2004-07-18 23:57:16.000000000 +0000
++++ xpuzzles-7.0.1/dino/xdino.man	2004-07-18 23:57:16.000000000 +0000
 @@ -24,7 +24,7 @@
  .SH NAME
  xdino \- Dino X widgets
@@ -31,8 +31,8 @@
  [-geometry [{width}][x{height}][{+-}{xoff}[{+-}{yoff}]]]
  [-display [{host}]:[{vs}]] [-[no]mono] [-[no]{reverse|rv}]
  [-{foreground|fg} {color}] [-{background|bg} {color}]
---- xpuzzles-7.0.1/xhexagons/xhexagons.man~	2004-07-18 23:57:19.000000000 +0000
-+++ xpuzzles-7.0.1/xhexagons/xhexagons.man	2004-07-18 23:57:19.000000000 +0000
+--- xpuzzles-7.0.1/hexagons/xhexagons.man~	2004-07-18 23:57:19.000000000 +0000
++++ xpuzzles-7.0.1/hexagons/xhexagons.man	2004-07-18 23:57:19.000000000 +0000
 @@ -24,7 +24,7 @@
  .SH NAME
  xhexagons \- Hexagons X widget
@@ -42,8 +42,8 @@
  [-geometry [{width}][x{height}][{+-}{xoff}[{+-}{yoff}]]]
  [-display [{host}]:[{vs}]] [-[no]mono] [-[no]{reverse|rv}]
  [-{foreground|fg} {color}] [-{background|bg} {color}]
---- xpuzzles-7.0.1/xmball/xmball.man~	2004-07-18 23:57:21.000000000 +0000
-+++ xpuzzles-7.0.1/xmball/xmball.man	2004-07-18 23:57:21.000000000 +0000
+--- xpuzzles-7.0.1/mball/xmball.man~	2004-07-18 23:57:21.000000000 +0000
++++ xpuzzles-7.0.1/mball/xmball.man	2004-07-18 23:57:21.000000000 +0000
 @@ -24,7 +24,7 @@
  .SH NAME
  xmball \- Masterball X widget
@@ -53,8 +53,8 @@
  [-geometry [{width}][x{height}][{+-}{xoff}[{+-}{yoff}]]]
  [-display [{host}]:[{vs}]] [-[no]mono] [-[no]{reverse|rv}]
  [-{foreground|fg} {color}] [-{background|bg} {color}]
---- xpuzzles-7.0.1/xmlink/xmlink.man~	2004-07-18 23:57:22.000000000 +0000
-+++ xpuzzles-7.0.1/xmlink/xmlink.man	2004-07-18 23:57:22.000000000 +0000
+--- xpuzzles-7.0.1/mlink/xmlink.man~	2004-07-18 23:57:22.000000000 +0000
++++ xpuzzles-7.0.1/mlink/xmlink.man	2004-07-18 23:57:22.000000000 +0000
 @@ -24,7 +24,7 @@
  .SH NAME
  xmlink \- Missing Link X widget
@@ -64,8 +64,8 @@
  [-geometry [{width}][x{height}][{+-}{xoff}[{+-}{yoff}]]]
  [-display [{host}]:[{vs}]] [-[no]mono] [-[no]{reverse|rv}]
  [-{foreground|fg} {color}] [-{background|bg} {color}]
---- xpuzzles-7.0.1/xoct/xoct.man~	2004-07-18 23:57:24.000000000 +0000
-+++ xpuzzles-7.0.1/xoct/xoct.man	2004-07-18 23:57:24.000000000 +0000
+--- xpuzzles-7.0.1/oct/xoct.man~	2004-07-18 23:57:24.000000000 +0000
++++ xpuzzles-7.0.1/oct/xoct.man	2004-07-18 23:57:24.000000000 +0000
 @@ -24,7 +24,7 @@
  .SH NAME
  xoct \- Octahedron X widget
@@ -75,8 +75,8 @@
  [-geometry [{width}][x{height}][{+-}{xoff}[{+-}{yoff}]]]
  [-display [{host}]:[{vs}]] [-[no]mono] [-[no]{reverse|rv}]
  [-{foreground|fg} {color}] [-{background|bg} {color}]
---- xpuzzles-7.0.1/xpanex/xpanex.man~	2004-07-18 23:57:26.000000000 +0000
-+++ xpuzzles-7.0.1/xpanex/xpanex.man	2004-07-18 23:57:26.000000000 +0000
+--- xpuzzles-7.0.1/panex/xpanex.man~	2004-07-18 23:57:26.000000000 +0000
++++ xpuzzles-7.0.1/panex/xpanex.man	2004-07-18 23:57:26.000000000 +0000
 @@ -24,7 +24,7 @@
  .SH NAME
  xpanex \- Panex X widget
@@ -86,8 +86,8 @@
  [-geometry [{width}][x{height}][{+-}{xoff}[{+-}{yoff}]]]
  [-display [{host}]:[{vs}]] [-[no]mono] [-[no]{reverse|rv}]
  [-{foreground|fg} {color}] [-{background|bg} {color}]
---- xpuzzles-7.0.1/xpyraminx/xpyraminx.man~	2004-07-18 23:57:27.000000000 +0000
-+++ xpuzzles-7.0.1/xpyraminx/xpyraminx.man	2004-07-18 23:57:27.000000000 +0000
+--- xpuzzles-7.0.1/pyraminx/xpyraminx.man~	2004-07-18 23:57:27.000000000 +0000
++++ xpuzzles-7.0.1/pyraminx/xpyraminx.man	2004-07-18 23:57:27.000000000 +0000
 @@ -24,7 +24,7 @@
  .SH NAME
  xpyraminx \- Pyramid X widget
@@ -97,8 +97,8 @@
  [-geometry [{width}][x{height}][{+-}{xoff}[{+-}{yoff}]]]
  [-display [{host}]:[{vs}]] [-[no]mono] [-[no]{reverse|rv}]
  [-{foreground|fg} {color}] [-{background|bg} {color}]
---- xpuzzles-7.0.1/xrubik/xrubik.man~	2004-07-18 23:57:29.000000000 +0000
-+++ xpuzzles-7.0.1/xrubik/xrubik.man	2004-07-18 23:57:29.000000000 +0000
+--- xpuzzles-7.0.1/rubik/xrubik.man~	2004-07-18 23:57:29.000000000 +0000
++++ xpuzzles-7.0.1/rubik/xrubik.man	2004-07-18 23:57:29.000000000 +0000
 @@ -24,7 +24,7 @@
  .SH NAME
  xrubik \- Magic cube X widgets
@@ -108,8 +108,8 @@
  [-geometry [{width}][x{height}][{+-}{xoff}[{+-}{yoff}]]]
  [-display [{host}]:[{vs}]] [-[no]mono] [-[no]{reverse|rv}]
  [-{foreground|fg} {color}] [-{background|bg} {color}]
---- xpuzzles-7.0.1/xskewb/xskewb.man~	2004-07-18 23:57:31.000000000 +0000
-+++ xpuzzles-7.0.1/xskewb/xskewb.man	2004-07-18 23:57:31.000000000 +0000
+--- xpuzzles-7.0.1/skewb/xskewb.man~	2004-07-18 23:57:31.000000000 +0000
++++ xpuzzles-7.0.1/skewb/xskewb.man	2004-07-18 23:57:31.000000000 +0000
 @@ -24,7 +24,7 @@
  .SH NAME
  xskewb \- Skewb X widgets
@@ -119,19 +119,19 @@
  [-geometry [{width}][x{height}][{+-}{xoff}[{+-}{yoff}]]]
  [-display [{host}]:[{vs}]] [-[no]mono] [-[no]{reverse|rv}]
  [-{foreground|fg} {color}] [-{background|bg} {color}]
---- xpuzzles-7.0.1/xthreed/xthreed.man~	2004-07-18 23:57:33.000000000 +0000
-+++ xpuzzles-7.0.1/xthreed/xthreed.man	2004-07-18 23:57:33.000000000 +0000
-@@ -24,7 +24,7 @@
+--- xpuzzles-7.4.2/threed/xthreed.man~  2008-04-24 21:59:26.000000000 +0200
++++ xpuzzles-7.4.2/threed/xthreed.man   2008-12-08 14:04:14.000000000 +0100
+@@ -20,7 +20,7 @@
  .SH NAME
  xthreed \- Threed X widget
  .SH SYNOPSIS
 -.B /usr/games/xthreed
 +.B /usr/bin/xthreed
- [-display <display>] [-geometry <geometry>]
- [-{foreground | fg} <color>] [-{background | bg} <color>] [-[no]surface]
- [-object {int}] [-distance {int}] [-theta {int}] [-phi {int}]
---- xpuzzles-7.0.1/xtriangles/xtriangles.man~	2004-07-18 23:57:34.000000000 +0000
-+++ xpuzzles-7.0.1/xtriangles/xtriangles.man	2004-07-18 23:57:34.000000000 +0000
+ [-geometry [{width}][x{height}][{+-}{xoff}[{+-}{yoff}]]]
+ [-display [{host}]:[{vs}]] [-{foreground|fg} {color}]
+ [-{background|bg} {color}] [-frame {color}
+--- xpuzzles-7.0.1/triangles/xtriangles.man~	2004-07-18 23:57:34.000000000 +0000
++++ xpuzzles-7.0.1/triangles/xtriangles.man	2004-07-18 23:57:34.000000000 +0000
 @@ -24,7 +24,7 @@
  .SH NAME
  xtriangles \- Triangles X widget
