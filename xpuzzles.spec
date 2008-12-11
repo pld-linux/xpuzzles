@@ -24,6 +24,8 @@ Patch0:		%{name}-man.patch
 URL:		http://www.tux.org/~bagleyd/puzzles.html
 BuildRequires:	openmotif-devel
 BuildRequires:	xorg-cf-files
+BuildRequires:	xorg-lib-libX11-devel
+BuildRequires:	xorg-lib-libXt-devel
 BuildRequires:	xorg-util-imake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -45,6 +47,7 @@ wersję kostki Rubika i różne inne układanki w tym stylu.
 %{__make} -f xpuzzles.Makefile \
 	CC="%{__cc}" \
 	CDEBUGFLAGS="%{rpmcflags}" \
+	LOCAL_LDFLAGS="%{rpmldflags}" \
 	XMDEF="-DHAVE_MOTIF" \
 	XMLIB="-lXm"
 
@@ -54,6 +57,7 @@ xmkmf
 %{__make} \
 	CC="%{__cc}" \
 	CDEBUGFLAGS="%{rpmcflags}" \
+	LOCAL_LDFLAGS="%{rpmldflags}" \
 	XMDEF="-DHAVE_MOTIF" \
 	XMLIB="-lXm" \
 	DATAFILE="%{_datadir}/misc/xthreed.dat"
