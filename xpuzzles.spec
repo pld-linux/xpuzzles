@@ -1,12 +1,12 @@
 Summary:	Geometric puzzles and toys for the X Window System
 Summary(pl.UTF-8):	Geometryczne układanki i zabawki pod X Window System
 Name:		xpuzzles
-Version:	7.5
+Version:	7.5.1
 Release:	1
 License:	MIT
 Group:		X11/Applications/Games
 Source0:	http://www.tux.org/pub/tux/xpuzzles/%{name}-%{version}.tar.bz2
-# Source0-md5:	8807ea8bc464c15264e78632a468587a
+# Source0-md5:	30bb3b8c44421be89baa3feb9ced746b
 Source1:	xbarrel.desktop
 Source2:	xcubes.desktop
 Source3:	xdino.desktop
@@ -20,9 +20,9 @@ Source10:	xrubik.desktop
 Source11:	xskewb.desktop
 Source12:	xthreed.desktop
 Source13:	xtriangles.desktop
-Patch0:		%{name}-man.patch
 URL:		http://www.tux.org/~bagleyd/puzzles.html
 BuildRequires:	openmotif-devel
+BuildRequires:	sed >= 4.0
 BuildRequires:	xorg-cf-files
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXt-devel
@@ -40,7 +40,7 @@ wersję kostki Rubika i różne inne układanki w tym stylu.
 
 %prep
 %setup -q
-%patch0 -p1
+%{__sed} -i 's,/usr/games,/usr/bin,' `find -name "*.man"`
 
 %build
 %{__make} -f xpuzzles.Makefile xmkmf
