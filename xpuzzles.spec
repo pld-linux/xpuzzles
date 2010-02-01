@@ -25,7 +25,9 @@ BuildRequires:	openmotif-devel
 BuildRequires:	sed >= 4.0
 BuildRequires:	xorg-cf-files
 BuildRequires:	xorg-lib-libX11-devel
+BuildRequires:	xorg-lib-libXpm-devel
 BuildRequires:	xorg-lib-libXt-devel
+BuildRequires:	xorg-util-gccmakedep
 BuildRequires:	xorg-util-imake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
