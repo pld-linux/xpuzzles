@@ -1,12 +1,12 @@
 Summary:	Geometric puzzles and toys for the X Window System
 Summary(pl.UTF-8):	Geometryczne układanki i zabawki pod X Window System
 Name:		xpuzzles
-Version:	7.6.3
+Version:	7.7.1
 Release:	1
 License:	MIT
 Group:		X11/Applications/Games
 Source0:	http://www.tux.org/pub/tux/xpuzzles/%{name}-%{version}.tar.bz2
-# Source0-md5:	ad4249a6b078dbc39585a1271d09faf4
+# Source0-md5:	767f422336a629db9352b51d969a00ff
 Source1:	xbarrel.desktop
 Source2:	xcubes.desktop
 Source3:	xdino.desktop
