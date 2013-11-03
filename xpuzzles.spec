@@ -21,7 +21,7 @@ Source11:	xskewb.desktop
 Source12:	xthreed.desktop
 Source13:	xtriangles.desktop
 URL:		http://www.tux.org/~bagleyd/puzzles.html
-BuildRequires:	openmotif-devel
+BuildRequires:	motif-devel
 BuildRequires:	sed >= 4.0
 BuildRequires:	xorg-cf-files
 BuildRequires:	xorg-lib-libX11-devel
